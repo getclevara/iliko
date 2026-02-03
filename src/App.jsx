@@ -132,21 +132,21 @@ function Hero() {
             variants={scaleIn}
             whileHover={{ scale: 1.03, y: -5 }}
           >
-            <span>Your photo here</span>
+            <img src="/images/hero-main.jpg" alt="ʻIlikō Sweet Skin founder in treatment room" />
           </motion.div>
           <motion.div 
             className="hero__image hero__image--secondary"
             variants={fadeUp}
             whileHover={{ scale: 1.03, y: -5 }}
           >
-            <span>Treatment room</span>
+            <img src="/images/hero-secondary.jpg" alt="Preparing treatment bed with care" />
           </motion.div>
           <motion.div 
             className="hero__image hero__image--tertiary"
             variants={fadeUp}
             whileHover={{ scale: 1.03, y: -5 }}
           >
-            <span>Products</span>
+            <img src="/images/hero-tertiary.jpg" alt="Premium skincare products" />
           </motion.div>
           <motion.div 
             className="hero__badge-float"
@@ -197,7 +197,7 @@ function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <span className="about__visual-text">Candida's portrait here</span>
+            <img src="/images/about.jpg" alt="Candida at ʻIlikō Sweet Skin" />
           </motion.div>
           <motion.div 
             className="about__content"
@@ -425,7 +425,7 @@ function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <span className="contact__visual-text">Your spa<br/>awaits</span>
+            <img src="/images/contact.jpg" alt="ʻIlikō Sweet Skin spa interior" />
             <div className="contact__accent">
               <span>Aloha</span>
               <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>means love</span>
