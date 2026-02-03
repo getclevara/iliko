@@ -87,22 +87,7 @@ function Hero() {
       <div className="hero__shapes">
         <motion.div className="hero__shape hero__shape--1" style={{ y: floatY1 }} />
         <motion.div className="hero__shape hero__shape--2" style={{ y: floatY2 }} />
-        <motion.div className="hero__shape hero__shape--3" style={{ y: floatY1 }} />
       </div>
-      
-      {/* Floating Accent Elements */}
-      <motion.div 
-        className="hero__accent-text hero__accent-text--left"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 1.2 }}
-      >
-        <span>Sugar</span>
-        <span>·</span>
-        <span>Skin</span>
-        <span>·</span>
-        <span>Soul</span>
-      </motion.div>
       
       <div className="hero__container">
         {/* Left Content */}
@@ -118,14 +103,14 @@ function Hero() {
           </motion.div>
           
           <div className="hero__title-wrapper">
-            <motion.span
-              className="hero__title-small"
+            <motion.h2
+              className="hero__brand"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               ʻIlikō Sweet Skin
-            </motion.span>
+            </motion.h2>
             
             <h1>
               <motion.span
@@ -145,7 +130,7 @@ function Hero() {
                 Natural
               </motion.span>
               <motion.span
-                className="hero__title-accent"
+                className="hero__title-accent hero__title-accent--highlight"
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
@@ -179,6 +164,29 @@ function Hero() {
             </a>
             <a href="#services" className="btn btn--text">Explore Services</a>
           </motion.div>
+          
+          {/* Floating Stats - moved under CTAs for better flow */}
+          <motion.div 
+            className="hero__stats"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+          >
+            <div className="hero__stat">
+              <span className="hero__stat-number">5.0</span>
+              <span className="hero__stat-label">★ Rating</span>
+            </div>
+            <div className="hero__stat-divider"></div>
+            <div className="hero__stat">
+              <span className="hero__stat-number">500+</span>
+              <span className="hero__stat-label">Happy Clients</span>
+            </div>
+            <div className="hero__stat-divider"></div>
+            <div className="hero__stat">
+              <span className="hero__stat-number">8+</span>
+              <span className="hero__stat-label">Years Experience</span>
+            </div>
+          </motion.div>
         </motion.div>
         
         {/* Right Image Gallery */}
@@ -191,7 +199,6 @@ function Hero() {
             style={{ y: imageY, scale: imageScale }}
           >
             <img src="/images/treatment-room.jpg" alt="Serene treatment room" />
-            <div className="hero__image-frame"></div>
           </motion.div>
           
           <motion.div 
@@ -212,22 +219,15 @@ function Hero() {
             <img src="/images/products.jpg" alt="Premium products" />
           </motion.div>
           
-          {/* Floating Stats Card */}
+          {/* Women-Owned Badge - repositioned */}
           <motion.div 
-            className="hero__stats-card"
+            className="hero__badge-float"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
           >
-            <div className="hero__stat">
-              <span className="hero__stat-number">5.0</span>
-              <span className="hero__stat-label">★ Rating</span>
-            </div>
-            <div className="hero__stat-divider"></div>
-            <div className="hero__stat">
-              <span className="hero__stat-number">500+</span>
-              <span className="hero__stat-label">Happy Clients</span>
-            </div>
+            <span>Women</span>
+            <span>Owned</span>
           </motion.div>
         </div>
       </div>
@@ -240,18 +240,7 @@ function Hero() {
         transition={{ delay: 1.8 }}
       >
         <div className="hero__scroll-line"></div>
-        <span>Discover</span>
-      </motion.div>
-      
-      {/* Women-Owned Badge */}
-      <motion.div 
-        className="hero__women-owned"
-        initial={{ opacity: 0, rotate: -10 }}
-        animate={{ opacity: 1, rotate: 0 }}
-        transition={{ duration: 0.8, delay: 1.5 }}
-      >
-        <span>Women</span>
-        <span>Owned</span>
+        <span>Scroll</span>
       </motion.div>
     </section>
   );
@@ -467,24 +456,28 @@ function Experience() {
 function Reviews() {
   const reviews = [
     {
-      text: "Candida made me feel confident, worthy and beautiful again. It was as if I'd walked into a spa in a 5-star hotel.",
-      author: "Verified Client",
-      service: "Brazilian Sugaring"
+      text: "The family business that they provide is amazing to me and they make the environment so calm for every client. I love seeing Majena every month—she is like my therapy person. She just makes me feel better about myself.",
+      author: "Kahealani M.",
+      service: "Monthly Sugaring",
+      date: "Sep 2025"
     },
     {
-      text: "This isn't your average spa. The care and intention behind everything they do is unmatched. Once you try sugaring, you'll never go back!",
-      author: "Loyal Client",
-      service: "Full Body Sugaring"
+      text: "Iliko Beauty & Sugaring Spa are incredible! Mumma & daughter team are professional, efficient, & exceeded my expectations. Beautiful & lovely inside & out! True description of the 'Aloha Spirit'",
+      author: "Cyndi M.",
+      service: "Sugaring Treatment",
+      date: "Nov 2025"
     },
     {
-      text: "Majena is amazing! The facial transported me to another world. I left feeling fresh, relaxed, and beautiful!",
-      author: "First-time Visitor",
-      service: "Signature Facial"
+      text: "Love the Ohana there, everyone is so friendly and helpful. Majena is especially helpful and understanding. Awesome service from all of them. So much Aloha!",
+      author: "Malia A.",
+      service: "Facial & Sugaring",
+      date: "Sep 2025"
     },
     {
-      text: "A female-owned business filled with personable and caring individuals passionate in their craft. My forever self-care spot!",
-      author: "Regular Client",
-      service: "Multiple Services"
+      text: "Every woman should try it at least once. Candida is super sweet and professional. My first time having to sugar my face, not bad at all. Feeling smooth and looking clean.",
+      author: "Claudine L.",
+      service: "Facial Sugaring",
+      date: "Oct 2025"
     }
   ];
 
@@ -493,17 +486,12 @@ function Reviews() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % reviews.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="reviews section" id="reviews">
-      <div className="reviews__bg">
-        <img src="/images/neon.jpg" alt="" />
-        <div className="reviews__overlay"></div>
-      </div>
-      
       <div className="container">
         <motion.div 
           className="reviews__content"
@@ -512,8 +500,8 @@ function Reviews() {
           viewport={{ once: true }}
           variants={fadeUp}
         >
-          <span className="section-label section-label--light">Client Love</span>
-          <h2>Words from<br /><em>Our ʻOhana</em></h2>
+          <span className="section-label">Client Love</span>
+          <h2>Words from Our <em>ʻOhana</em></h2>
           
           <div className="reviews__carousel">
             <AnimatePresence mode="wait">
@@ -529,7 +517,7 @@ function Reviews() {
                 <blockquote>"{reviews[current].text}"</blockquote>
                 <div className="review__author">
                   <span className="review__name">{reviews[current].author}</span>
-                  <span className="review__service">{reviews[current].service}</span>
+                  <span className="review__meta">{reviews[current].service} · {reviews[current].date}</span>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -544,6 +532,11 @@ function Reviews() {
                 />
               ))}
             </div>
+          </div>
+          
+          <div className="reviews__trust">
+            <span>Verified reviews from</span>
+            <strong>Vagaro</strong>
           </div>
         </motion.div>
       </div>
